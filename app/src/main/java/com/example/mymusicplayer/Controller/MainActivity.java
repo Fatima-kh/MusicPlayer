@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 
-public class MainActivity extends SingleFragmentActivity {
+public class MainActivity extends SingleFragmentActivity implements TabbedViewFragment.OnFragmentInteractionListener  {
 
     public static Intent newIntent(Context context) {
         return new Intent(context, MainActivity.class);

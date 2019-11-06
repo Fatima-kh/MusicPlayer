@@ -39,6 +39,8 @@ public class TabbedViewFragment extends Fragment {
     private View view;
     PagerAdapter adapter;
     private SingleFragmentActivity SingleFragmentActivity;
+    public static int positionSaver=0;
+
 
     public TabbedViewFragment() {
         // Required empty public constructor
@@ -46,7 +48,6 @@ public class TabbedViewFragment extends Fragment {
 
     public static TabbedViewFragment newInstance() {
         Bundle args = new Bundle();
-
         TabbedViewFragment tabbedViewFragment = new TabbedViewFragment();
         tabbedViewFragment.setArguments(args);
         return tabbedViewFragment;
@@ -78,7 +79,8 @@ public class TabbedViewFragment extends Fragment {
                 case 0:
                     return MusicFragment.newInstance();
                 case 1:
-                    return MusicFragment.newInstance();
+                    positionSaver=1;
+                    return AlbumFragment.newInstance();
                 case 2:
                     return MusicFragment.newInstance();
             }
@@ -118,8 +120,15 @@ public class TabbedViewFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Fragment musicFragment=new MusicFragment();
+        Fragment albumFragment=new AlbumFragment();
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.replace(R.id.container_viewpager, musicFragment).commit();
+        if(positionSaver==0){
+            transaction.replace(R.id.container_viewpager, musicFragment).commit();
+        }
+        else if(positionSaver==1){
+            transaction.replace(R.id.container_viewpager,albumFragment ).commit();
+        }
+
     }
 
 

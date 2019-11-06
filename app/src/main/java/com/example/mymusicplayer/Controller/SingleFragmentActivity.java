@@ -19,7 +19,7 @@ import com.example.mymusicplayer.Model.Music;
 import com.example.mymusicplayer.R;
 import com.example.mymusicplayer.Repository.SongRepository;
 
-public abstract class SingleFragmentActivity extends AppCompatActivity implements TabbedViewFragment.OnFragmentInteractionListener, MusicFragment.OnFragmentInteractionListener {
+public abstract class SingleFragmentActivity extends AppCompatActivity implements TabbedViewFragment.OnFragmentInteractionListener, MusicFragment.OnFragmentInteractionListener,AlbumFragment.OnFragmentInteractionListener {
 
     public static final String TAG = "SingleFragmentActivity";
 
