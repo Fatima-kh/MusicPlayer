@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyMusicPlayer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="music_tabbed">musics</string>
+    <string name="albums_tabbed">albums</string>
+    <string name="artists_tabbed">artists</string>
+    <string name="title_of_music">title</string>
+    <string name="artist_name">artist</string>
+</resources>
