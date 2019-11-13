@@ -19,8 +19,7 @@ import com.example.mymusicplayer.Model.Music;
 import com.example.mymusicplayer.R;
 import com.example.mymusicplayer.Repository.SongRepository;
 
-public abstract class SingleFragmentActivity extends AppCompatActivity implements TabbedViewFragment.OnFragmentInteractionListener, MusicFragment.OnFragmentInteractionListener,AlbumFragment.OnFragmentInteractionListener {
-
+public abstract class SingleFragmentActivity extends AppCompatActivity {
     public static final String TAG = "SingleFragmentActivity";
 
     public abstract Fragment createFragment();
@@ -39,15 +38,15 @@ public abstract class SingleFragmentActivity extends AppCompatActivity implement
                     .add(R.id.fragment_container, createFragment())
                     .commit();
     }
-    @Override
+   /* @Override
     public void messageFromParentFragment(Uri uri) {
         Log.i("TAG", "received communication from parent fragment");
-    }
+    }*/
 
-    @Override
+   /* @Override
     public void messageFromChildFragment(Uri uri) {
         Log.i("TAG", "received communication from child fragment");
-    }
+    }*/
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 
     public void getSongs() {

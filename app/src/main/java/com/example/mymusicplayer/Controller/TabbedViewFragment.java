@@ -33,7 +33,7 @@ import com.google.android.material.tabs.TabLayout;
 public class TabbedViewFragment extends Fragment {
     public static final int count_pages = 3;
     public static final String TAG = "tag";
-    private OnFragmentInteractionListener mListener;
+    //private OnFragmentInteractionListener mListener;
     ViewPager viewPager;
     TabLayout tabLayout;
     private View view;
@@ -82,7 +82,7 @@ public class TabbedViewFragment extends Fragment {
                     positionSaver=1;
                     return AlbumFragment.newInstance();
                 case 2:
-                    return MusicFragment.newInstance();
+                    return ArtistFragment.newInstance();
             }
 
             return MusicFragment.newInstance();
@@ -117,7 +117,7 @@ public class TabbedViewFragment extends Fragment {
         }
     }
 
-    @Override
+    /*@Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Fragment musicFragment=new MusicFragment();
         Fragment albumFragment=new AlbumFragment();
@@ -152,7 +152,7 @@ public class TabbedViewFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void messageFromParentFragment(Uri uri);
-    }
+    }*/
 
 
 

@@ -29,7 +29,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class MusicFragment extends Fragment {
-    private OnFragmentInteractionListener mListener;
+    //private OnFragmentInteractionListener mListener;
     public MusicFragment() {
         // Required empty public constructor
     }
@@ -129,7 +129,7 @@ public class MusicFragment extends Fragment {
         }
     }
 
-    @Override
+   /* @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
@@ -150,6 +150,6 @@ public class MusicFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void messageFromChildFragment(Uri uri);
-    }
+    }*/
 }
 

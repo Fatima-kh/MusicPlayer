@@ -20,6 +20,7 @@ import com.example.mymusicplayer.Model.Music;
 import com.example.mymusicplayer.R;
 import com.example.mymusicplayer.Repository.SongRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,8 +30,7 @@ public class AlbumFragment extends Fragment {
     RecyclerView recyclerView;
     AlbumAdapter adapter;
     SongRepository repository;
-    private OnFragmentInteractionListener mListener;
-
+    //private OnFragmentInteractionListener mListener;
     public AlbumFragment() {
         // Required empty public constructor
     }
@@ -50,7 +50,7 @@ public class AlbumFragment extends Fragment {
         recyclerView = v.findViewById(R.id.recycler_music);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         repository = SongRepository.getInstance();
-        adapter = new AlbumAdapter(repository.getMusicList());
+        adapter = new AlbumAdapter(repository.getFilteredMusicList(1));
         recyclerView.setAdapter(adapter);
         return v;
     }
@@ -61,7 +61,7 @@ public class AlbumFragment extends Fragment {
 
         public AlbumViewHolder(@NonNull View itemView) {
             super(itemView);
-            songImgView = itemView.findViewById(R.id.image_album_imageview);
+            songImgView = itemView.findViewById(R.id.image_album_image_view);
             albumName = itemView.findViewById(R.id.album_name_textView);
             artistName = itemView.findViewById(R.id.artist_name_textView);
         }
@@ -70,6 +70,10 @@ public class AlbumFragment extends Fragment {
             albumName.setText(music.getAlbum());
             songImgView.setImageBitmap(music.getBitmap());
             artistName.setText(music.getArtist());
+
+
+
+
         }
     }
 
@@ -105,7 +109,7 @@ public class AlbumFragment extends Fragment {
             return albumList.size();
         }
     }
-    @Override
+    /*@Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof AlbumFragment.OnFragmentInteractionListener) {
@@ -126,6 +130,6 @@ public class AlbumFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void messageFromChildFragment(Uri uri);
-    }
+    }*/
 
 }
